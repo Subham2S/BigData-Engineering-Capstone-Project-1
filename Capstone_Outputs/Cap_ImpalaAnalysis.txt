@@ -1,0 +1,647 @@
++--------------+
+| name         |
++--------------+
+| departments  |
+| dept_emp     |
+| dept_emp1    |
+| dept_manager |
+| employees    |
+| salaries     |
+| titles       |
++--------------+
++------------------------------------------+
+| summary                                  |
++------------------------------------------+
+| Updated 1 partition(s) and 11 column(s). |
++------------------------------------------+
++-------------------------+--------+------------------+--------+----------+-------------------+
+| Column                  | Type   | #Distinct Values | #Nulls | Max Size | Avg Size          |
++-------------------------+--------+------------------+--------+----------+-------------------+
+| emp_no                  | INT    | 299016           | 0      | 4        | 4                 |
+| emp_title_id            | STRING | 7                | 0      | 5        | 5                 |
+| birth_date              | STRING | 4652             | 0      | 10       | 10                |
+| first_name              | STRING | 1287             | 0      | 14       | 6.215719223022461 |
+| last_name               | STRING | 1654             | 0      | 16       | 7.153881072998047 |
+| sex                     | STRING | 2                | 0      | 1        | 1                 |
+| hire_date               | STRING | 5387             | 0      | 10       | 10                |
+| no_of_projects          | INT    | 10               | 0      | 4        | 4                 |
+| last_performance_rating | STRING | 5                | 0      | 3        | 1.100691914558411 |
+| left2                   | INT    | 2                | 0      | 4        | 4                 |
+| last_date               | STRING | 7415             | 270157 | 10       | 10                |
++-------------------------+--------+------------------+--------+----------+-------------------+
++--------+-------------+------------+-----+--------+
+| emp_no | last_name   | first_name | sex | salary |
++--------+-------------+------------+-----+--------+
+| 10001  | Facello     | Georgi     | M   | 60117  |
+| 10002  | Simmel      | Bezalel    | F   | 65828  |
+| 10003  | Bamford     | Parto      | M   | 40006  |
+| 10004  | Koblick     | Chirstian  | M   | 40054  |
+| 10005  | Maliniak    | Kyoichi    | M   | 78228  |
+| 10006  | Preusig     | Anneke     | F   | 40000  |
+| 10007  | Zielinski   | Tzvetan    | F   | 56724  |
+| 10008  | Kalloufi    | Saniya     | M   | 46671  |
+| 10009  | Peac        | Sumant     | F   | 60929  |
+| 10010  | Piveteau    | Duangkaew  | F   | 72488  |
+| 10011  | Sluis       | Mary       | F   | 42365  |
+| 10012  | Bridgland   | Patricio   | M   | 40000  |
+| 10013  | Terkki      | Eberhardt  | M   | 40000  |
+| 10014  | Genin       | Berni      | M   | 46168  |
+| 10015  | Nooteboom   | Guoxiang   | M   | 40000  |
+| 10016  | Cappelletti | Kazuhito   | M   | 70889  |
+| 10017  | Bouloucos   | Cristinel  | F   | 71380  |
+| 10018  | Peha        | Kazuhide   | F   | 55881  |
+| 10019  | Haddadi     | Lillian    | M   | 44276  |
+| 10020  | Warwick     | Mayuko     | M   | 40000  |
+| 10021  | Erde        | Ramzi      | M   | 55025  |
+| 10022  | Famili      | Shahaf     | M   | 40000  |
+| 10023  | Montemayor  | Bojan      | F   | 47883  |
+| 10024  | Pettey      | Suzette    | F   | 83733  |
+| 10025  | Heyers      | Prasadram  | M   | 40000  |
+| 10026  | Berztiss    | Yongqiao   | M   | 47585  |
+| 10027  | Reistad     | Divier     | F   | 40000  |
+| 10028  | Tempesti    | Domenick   | M   | 48859  |
+| 10029  | Herbst      | Otmar      | M   | 63163  |
+| 10030  | Demeyer     | Elvis      | M   | 66956  |
++--------+-------------+------------+-----+--------+
++------------+----------------+------------+
+| first_name | last_name      | hire_date  |
++------------+----------------+------------+
+| Georgi     | Facello        | 1986-06-26 |
+| Parto      | Bamford        | 1986-08-28 |
+| Chirstian  | Koblick        | 1986-12-01 |
+| Sanjiv     | Zschoche       | 1986-02-04 |
+| Kwee       | Schusler       | 1986-02-26 |
+| Kshitij    | Gils           | 1986-03-27 |
+| Zhongwei   | Rosen          | 1986-10-30 |
+| Xinglin    | Eugenio        | 1986-09-08 |
+| Sudharsan  | Flasterstein   | 1986-08-12 |
+| Kendra     | Hofting        | 1986-03-14 |
+| Hilari     | Morton         | 1986-07-15 |
+| Akemi      | Birch          | 1986-12-02 |
+| Lunjin     | Giveon         | 1986-10-02 |
+| Xuejia     | Ullian         | 1986-08-22 |
+| Chikara    | Rissland       | 1986-01-23 |
+| Domenick   | Peltason       | 1986-03-14 |
+| Zissis     | Pintelas       | 1986-02-11 |
+| Perry      | Shimshoni      | 1986-09-18 |
+| Kazuhito   | Encarnacion    | 1986-08-21 |
+| Xiadong    | Perry          | 1986-11-05 |
+| Zhenbing   | Perng          | 1986-11-16 |
+| Jaques     | Munro          | 1986-01-27 |
+| Khedija    | Mitsuhashi     | 1986-01-29 |
+| Dharmaraja | Stassinopoulos | 1986-12-06 |
+| Kasturi    | Jenevein       | 1986-01-02 |
+| Valery     | Litvinov       | 1986-10-07 |
+| Shaw       | Wendorf        | 1986-02-25 |
+| Duro       | Sidhu          | 1986-03-01 |
+| Shigehito  | Kropatsch      | 1986-03-28 |
+| Arve       | Fairtlough     | 1986-06-23 |
++------------+----------------+------------+
++---------+--------------------+--------+--------------+-------------+---------+
+| dept_no | dept_name          | emp_no | last_name    | first_name  | title   |
++---------+--------------------+--------+--------------+-------------+---------+
+| d001    | Marketing          | 110022 | Markovitch   | Margareta   | Manager |
+| d001    | Marketing          | 110039 | Minakawa     | Vishwani    | Manager |
+| d002    | Finance            | 110085 | Alpin        | Ebru        | Manager |
+| d002    | Finance            | 110114 | Legleitner   | Isamu       | Manager |
+| d003    | Human Resources    | 110183 | Ossenbruggen | Shirish     | Manager |
+| d003    | Human Resources    | 110228 | Sigstam      | Karsten     | Manager |
+| d004    | Production         | 110303 | Wegerle      | Krassimir   | Manager |
+| d004    | Production         | 110344 | Cools        | Rosine      | Manager |
+| d004    | Production         | 110386 | Kieras       | Shem        | Manager |
+| d004    | Production         | 110420 | Ghazalie     | Oscar       | Manager |
+| d005    | development        | 110511 | Hagimont     | DeForest    | Manager |
+| d005    | development        | 110567 | DasSarma     | Leon        | Manager |
+| d006    | Quality Management | 110725 | Onuegbe      | Peternela   | Manager |
+| d006    | Quality Management | 110765 | Hofmeyr      | Rutger      | Manager |
+| d006    | Quality Management | 110800 | Quadeer      | Sanjoy      | Manager |
+| d006    | Quality Management | 110854 | Pesch        | Dung        | Manager |
+| d007    | Sales              | 111035 | Kaelbling    | Przemyslawa | Manager |
+| d007    | Sales              | 111133 | Zhang        | Hauke       | Manager |
+| d008    | Research           | 111400 | Staelin      | Arie        | Manager |
+| d008    | Research           | 111534 | Kambil       | Hilary      | Manager |
+| d009    | Customer Service   | 111692 | Butterworth  | Tonny       | Manager |
+| d009    | Customer Service   | 111784 | Giarratana   | Marjo       | Manager |
+| d009    | Customer Service   | 111877 | Spinelli     | Xiaobin     | Manager |
+| d009    | Customer Service   | 111939 | Weedman      | Yuchang     | Manager |
++---------+--------------------+--------+--------------+-------------+---------+
++--------+-------------+------------+--------------------+
+| emp_no | last_name   | first_name | dept_name          |
++--------+-------------+------------+--------------------+
+| 10001  | Facello     | Georgi     | development        |
+| 10002  | Simmel      | Bezalel    | Sales              |
+| 10003  | Bamford     | Parto      | Production         |
+| 10004  | Koblick     | Chirstian  | Production         |
+| 10005  | Maliniak    | Kyoichi    | Human Resources    |
+| 10006  | Preusig     | Anneke     | development        |
+| 10007  | Zielinski   | Tzvetan    | Research           |
+| 10008  | Kalloufi    | Saniya     | development        |
+| 10009  | Peac        | Sumant     | Quality Management |
+| 10010  | Piveteau    | Duangkaew  | Quality Management |
+| 10011  | Sluis       | Mary       | Customer Service   |
+| 10012  | Bridgland   | Patricio   | development        |
+| 10013  | Terkki      | Eberhardt  | Human Resources    |
+| 10014  | Genin       | Berni      | development        |
+| 10015  | Nooteboom   | Guoxiang   | Research           |
+| 10016  | Cappelletti | Kazuhito   | Sales              |
+| 10017  | Bouloucos   | Cristinel  | Marketing          |
+| 10018  | Peha        | Kazuhide   | development        |
+| 10019  | Haddadi     | Lillian    | Research           |
+| 10020  | Warwick     | Mayuko     | Production         |
+| 10021  | Erde        | Ramzi      | development        |
+| 10022  | Famili      | Shahaf     | development        |
+| 10023  | Montemayor  | Bojan      | development        |
+| 10024  | Pettey      | Suzette    | Production         |
+| 10025  | Heyers      | Prasadram  | development        |
+| 10026  | Berztiss    | Yongqiao   | Production         |
+| 10027  | Reistad     | Divier     | development        |
+| 10028  | Tempesti    | Domenick   | development        |
+| 10029  | Herbst      | Otmar      | Quality Management |
+| 10030  | Demeyer     | Elvis      | Production         |
++--------+-------------+------------+--------------------+
++------------+---------------+-----+
+| first_name | last_name     | sex |
++------------+---------------+-----+
+| Hercules   | Benzmuller    | M   |
+| Hercules   | Brendel       | F   |
+| Hercules   | Baranowski    | M   |
+| Hercules   | Barreiro      | M   |
+| Hercules   | Baer          | M   |
+| Hercules   | Bernardinello | F   |
+| Hercules   | Basagni       | M   |
+| Hercules   | Biran         | F   |
+| Hercules   | Bernatsky     | M   |
+| Hercules   | Bail          | F   |
+| Hercules   | Birge         | F   |
+| Hercules   | Bisiani       | F   |
+| Hercules   | Bodoff        | M   |
+| Hercules   | Biron         | F   |
+| Hercules   | Buchter       | M   |
+| Hercules   | Bain          | F   |
+| Hercules   | Bahr          | M   |
+| Hercules   | Baak          | M   |
+| Hercules   | Benantar      | F   |
+| Hercules   | Berstel       | F   |
++------------+---------------+-----+
++--------+---------------+---------------+-----------+
+| emp_no | last_name     | first_name    | dept_name |
++--------+---------------+---------------+-----------+
+| 10002  | Simmel        | Bezalel       | Sales     |
+| 10016  | Cappelletti   | Kazuhito      | Sales     |
+| 10034  | Swan          | Bader         | Sales     |
+| 10041  | Lenart        | Uri           | Sales     |
+| 10050  | Dredge        | Yinghua       | Sales     |
+| 10053  | Zschoche      | Sanjiv        | Sales     |
+| 10061  | Herber        | Tse           | Sales     |
+| 10068  | Brattka       | Charlene      | Sales     |
+| 10087  | Eugenio       | Xinglin       | Sales     |
+| 10089  | Flasterstein  | Sudharsan     | Sales     |
+| 10093  | Desikan       | Sailaja       | Sales     |
+| 10095  | Morton        | Hilari        | Sales     |
+| 10099  | Sullins       | Valter        | Sales     |
+| 10101  | Heyers        | Perla         | Sales     |
+| 10107  | Baca          | Dung          | Sales     |
+| 10125  | Hiltgen       | Syozo         | Sales     |
+| 10136  | Pintelas      | Zissis        | Sales     |
+| 10148  | Azumi         | Douadi        | Sales     |
+| 10149  | Perry         | Xiadong       | Sales     |
+| 10151  | Lichtner      | Itzchak       | Sales     |
+| 10160  | Khasidashvili | Debatosh      | Sales     |
+| 10178  | Litvinov      | Valery        | Sales     |
+| 10185  | Sidhu         | Duro          | Sales     |
+| 10199  | Ranta         | Kazuhisa      | Sales     |
+| 10209  | Ellozy        | Yolla         | Sales     |
+| 10214  | Ciolek        | Tadahiko      | Sales     |
+| 10215  | Duclos        | Xiaobin       | Sales     |
+| 10226  | Plessier      | Xinglin       | Sales     |
+| 10228  | Cesareni      | Karoline      | Sales     |
+| 10232  | Auria         | Marko         | Sales     |
+| 10234  | Bakhtari      | Arunachalam   | Sales     |
+| 10236  | Bade          | Susumu        | Sales     |
+| 10237  | Mandell       | Yannis        | Sales     |
+| 10243  | Pouyioutas    | Wonhee        | Sales     |
+| 10248  | Tempesti      | Frederique    | Sales     |
+| 10253  | Salinas       | Zsolt         | Sales     |
+| 10254  | Brattka       | Shen          | Sales     |
+| 10256  | Radhakrishnan | Irene         | Sales     |
+| 10262  | Maraist       | Mahendra      | Sales     |
+| 10270  | Hartvigsen    | Bedir         | Sales     |
+| 10273  | Lieblein      | Baocai        | Sales     |
+| 10277  | Schwartzbauer | Isaac         | Sales     |
+| 10291  | Seghrouchni   | Dipayan       | Sales     |
+| 10292  | Ghelli        | Yucel         | Sales     |
+| 10296  | Lorho         | Petter        | Sales     |
+| 10299  | Stentiford    | Ipke          | Sales     |
+| 10302  | Baer          | Faiza         | Sales     |
+| 10304  | Erie          | Bernt         | Sales     |
+| 10306  | Kilgour       | Heng          | Sales     |
+| 10308  | Holburn       | Dzung         | Sales     |
+| 10314  | Apsitis       | Christfried   | Sales     |
+| 10319  | Miyakawa      | Mechthild     | Sales     |
+| 10320  | Stasinski     | Uinam         | Sales     |
+| 10321  | Ravishankar   | Guenter       | Sales     |
+| 10330  | Bellmore      | Kasturi       | Sales     |
+| 10331  | Binkley       | Arto          | Sales     |
+| 10346  | Radwan        | Aamod         | Sales     |
+| 10355  | Cochrane      | Satyanarayana | Sales     |
+| 10361  | Sidou         | Seshu         | Sales     |
+| 10369  | Toyoshima     | Qunsheng      | Sales     |
+| 10370  | Fandrianto    | Clyde         | Sales     |
+| 10375  | Kalafatis     | Dante         | Sales     |
+| 10378  | Lichtner      | Takahira      | Sales     |
+| 10380  | Kamble        | Alejandro     | Sales     |
+| 10388  | Kaiser        | Hironoby      | Sales     |
+| 10398  | Escriba       | Shooichi      | Sales     |
+| 10399  | Marchegay     | Guenter       | Sales     |
+| 10400  | Nitto         | Ortrud        | Sales     |
+| 10403  | Mungall       | Atreyi        | Sales     |
+| 10407  | Siepmann      | Ulf           | Sales     |
+| 10408  | Kaiser        | Martijn       | Sales     |
+| 10410  | Gecsei        | Takahito      | Sales     |
+| 10411  | Klerer        | Lidong        | Sales     |
+| 10417  | Bakhtari      | Bingning      | Sales     |
+| 10427  | Sudbeck       | Khosrow       | Sales     |
+| 10431  | Bugrara       | Patricio      | Sales     |
+| 10442  | Unno          | Volkmar       | Sales     |
+| 10444  | Rosis         | Kazuhira      | Sales     |
+| 10448  | Oxenboll      | Phule         | Sales     |
+| 10449  | Sudkamp       | Aleksandar    | Sales     |
+| 10454  | Badr          | Wonhee        | Sales     |
+| 10455  | Streng        | Sverrir       | Sales     |
+| 10458  | Engelmann     | Gina          | Sales     |
+| 10461  | Karcich       | Gal           | Sales     |
+| 10463  | Zaiane        | Ung           | Sales     |
+| 10468  | Shobatake     | Yoshimitsu    | Sales     |
+| 10472  | Lodder        | Salvador      | Sales     |
+| 10490  | Vuskovic      | Huiqun        | Sales     |
+| 10493  | Haraldson     | Maris         | Sales     |
+| 10499  | Luft          | Maik          | Sales     |
+| 10504  | Varker        | Xiong         | Sales     |
+| 10505  | Auria         | Isamu         | Sales     |
+| 10509  | Riesenhuber   | Abdelwaheb    | Sales     |
+| 10515  | Kirkerud      | Raimond       | Sales     |
+| 10517  | Speek         | Tiina         | Sales     |
+| 10521  | Setia         | Kwangsub      | Sales     |
+| 10525  | Lunt          | Yuchang       | Sales     |
+| 10532  | Wossner       | Mary          | Sales     |
+| 10533  | Smailagic     | Mohamadou     | Sales     |
+| 10536  | Sambasivam    | Yechiam       | Sales     |
++--------+---------------+---------------+-----------+
++--------+---------------+-------------+-------------+
+| emp_no | last_name     | first_name  | dept_name   |
++--------+---------------+-------------+-------------+
+| 10001  | Facello       | Georgi      | development |
+| 10002  | Simmel        | Bezalel     | Sales       |
+| 10006  | Preusig       | Anneke      | development |
+| 10008  | Kalloufi      | Saniya      | development |
+| 10012  | Bridgland     | Patricio    | development |
+| 10014  | Genin         | Berni       | development |
+| 10016  | Cappelletti   | Kazuhito    | Sales       |
+| 10018  | Peha          | Kazuhide    | development |
+| 10021  | Erde          | Ramzi       | development |
+| 10022  | Famili        | Shahaf      | development |
+| 10023  | Montemayor    | Bojan       | development |
+| 10025  | Heyers        | Prasadram   | development |
+| 10027  | Reistad       | Divier      | development |
+| 10028  | Tempesti      | Domenick    | development |
+| 10031  | Joslin        | Karsten     | development |
+| 10034  | Swan          | Bader       | Sales       |
+| 10037  | Makrucki      | Pradeep     | development |
+| 10041  | Lenart        | Uri         | Sales       |
+| 10043  | Tzvieli       | Yishay      | development |
+| 10048  | Syrotiuk      | Florian     | development |
+| 10050  | Dredge        | Yinghua     | Sales       |
+| 10053  | Zschoche      | Sanjiv      | Sales       |
+| 10056  | Bernini       | Brendon     | development |
+| 10057  | Callaway      | Ebbe        | development |
+| 10061  | Herber        | Tse         | Sales       |
+| 10062  | Peyn          | Anoosh      | development |
+| 10065  | Awdeh         | Satosi      | development |
+| 10066  | Schusler      | Kwee        | development |
+| 10068  | Brattka       | Charlene    | Sales       |
+| 10072  | Sidou         | Hironoby    | development |
+| 10074  | Bernatsky     | Mokhtar     | development |
+| 10075  | Dolinsky      | Gao         | development |
+| 10076  | Ritzmann      | Erez        | development |
+| 10078  | Mondadori     | Danel       | development |
+| 10079  | Gils          | Kshitij     | development |
+| 10087  | Eugenio       | Xinglin     | Sales       |
+| 10089  | Flasterstein  | Sudharsan   | Sales       |
+| 10090  | Hofting       | Kendra      | development |
+| 10091  | Gomatam       | Amabile     | development |
+| 10092  | Niizuma       | Valdiodio   | development |
+| 10093  | Desikan       | Sailaja     | Sales       |
+| 10095  | Morton        | Hilari      | Sales       |
+| 10099  | Sullins       | Valter      | Sales       |
+| 10101  | Heyers        | Perla       | Sales       |
+| 10103  | Birch         | Akemi       | development |
+| 10107  | Baca          | Dung        | Sales       |
+| 10118  | Zyda          | Zhonghui    | development |
+| 10121  | Ramsay        | Guoxiang    | development |
+| 10122  | Esposito      | Ohad        | development |
+| 10125  | Hiltgen       | Syozo       | Sales       |
+| 10127  | Baja          | Subir       | development |
+| 10129  | Peir          | Armond      | development |
+| 10134  | Siprelle      | Diederik    | development |
+| 10136  | Pintelas      | Zissis      | Sales       |
+| 10139  | Foong         | Ewing       | development |
+| 10142  | Hettesheimer  | Tzvetan     | development |
+| 10143  | Bakhtari      | Sakthirel   | development |
+| 10145  | Esposito      | Akemi       | development |
+| 10148  | Azumi         | Douadi      | Sales       |
+| 10149  | Perry         | Xiadong     | Sales       |
+| 10150  | Perng         | Zhenbing    | development |
+| 10151  | Lichtner      | Itzchak     | Sales       |
+| 10153  | Majewski      | Heekeun     | development |
+| 10157  | Aloisi        | Nigel       | development |
+| 10160  | Khasidashvili | Debatosh    | Sales       |
+| 10166  | Siegrist      | Samphel     | development |
+| 10169  | Snedden       | Sampalli    | development |
+| 10178  | Litvinov      | Valery      | Sales       |
+| 10179  | Duclos        | Deniz       | development |
+| 10181  | Nooteboom     | Sibyl       | development |
+| 10185  | Sidhu         | Duro        | Sales       |
+| 10189  | Erva          | Khalid      | development |
+| 10191  | Nastansky     | Zdislav     | development |
+| 10193  | Cheshire      | Masaru      | development |
+| 10197  | Krzyzanowski  | Kasidit     | development |
+| 10198  | Furedi        | Pranav      | development |
+| 10199  | Ranta         | Kazuhisa    | Sales       |
+| 10201  | Kavraki       | Idoia       | development |
+| 10202  | Lichtner      | Greger      | development |
+| 10204  | Ritcey        | Nevio       | development |
+| 10206  | Iwayama       | Alassane    | development |
+| 10207  | Anandan       | Girolamo    | development |
+| 10209  | Ellozy        | Yolla       | Sales       |
+| 10211  | Strehl        | Vishu       | development |
+| 10212  | Esteva        | Divier      | development |
+| 10214  | Ciolek        | Tadahiko    | Sales       |
+| 10215  | Duclos        | Xiaobin     | Sales       |
+| 10223  | Schmiedel     | Carrsten    | development |
+| 10226  | Plessier      | Xinglin     | Sales       |
+| 10227  | Kaiser        | Anneli      | development |
+| 10228  | Cesareni      | Karoline    | Sales       |
+| 10232  | Auria         | Marko       | Sales       |
+| 10234  | Bakhtari      | Arunachalam | Sales       |
+| 10236  | Bade          | Susumu      | Sales       |
+| 10237  | Mandell       | Yannis      | Sales       |
+| 10243  | Pouyioutas    | Wonhee      | Sales       |
+| 10244  | Flasterstein  | Foong       | development |
+| 10248  | Tempesti      | Frederique  | Sales       |
+| 10253  | Salinas       | Zsolt       | Sales       |
+| 10254  | Brattka       | Shen        | Sales       |
++--------+---------------+-------------+-------------+
++---------------+---------------+
+| last_name     | last_name_cnt |
++---------------+---------------+
+| Baba          | 226           |
+| Coorg         | 223           |
+| Gelosh        | 223           |
+| Sudbeck       | 222           |
+| Farris        | 222           |
+| Adachi        | 221           |
+| Osgood        | 220           |
+| Masada        | 218           |
+| Neiman        | 218           |
+| Mandell       | 218           |
+| Boudaillier   | 217           |
+| Wendorf       | 217           |
+| Solares       | 216           |
+| Pettis        | 216           |
+| Cummings      | 216           |
+| Mahnke        | 216           |
+| Birjandi      | 215           |
+| Maksimenko    | 215           |
+| Kulisch       | 215           |
+| Collette      | 215           |
+| Emmart        | 215           |
+| Pokrovskii    | 214           |
+| Scallan       | 214           |
+| Boguraev      | 214           |
+| Rosaz         | 214           |
+| Stifter       | 213           |
+| Morrey        | 213           |
+| Siksek        | 213           |
+| Wolniewicz    | 213           |
+| Pramanik      | 212           |
+| Peek          | 212           |
+| Garrabrants   | 212           |
+| Rajcani       | 212           |
+| Taubman       | 212           |
+| Swen          | 212           |
+| Herber        | 212           |
+| Rabehasaina   | 212           |
+| Siepmann      | 212           |
+| Gente         | 211           |
+| Kitsuregawa   | 211           |
+| Kamber        | 211           |
+| Barriga       | 211           |
+| Asser         | 211           |
+| Ghemri        | 211           |
+| Ventosa       | 211           |
+| Cangellaris   | 211           |
+| Driscoll      | 210           |
+| Schaaf        | 210           |
+| Luce          | 210           |
+| Bolsens       | 210           |
+| Redmiles      | 210           |
+| Chenney       | 209           |
+| Khasidashvili | 209           |
+| Lunt          | 209           |
+| Gerlach       | 209           |
+| Lamparter     | 209           |
+| Serra         | 209           |
+| Malabarba     | 209           |
+| Flowers       | 209           |
+| Gewali        | 209           |
+| Zuberek       | 209           |
+| Gecsei        | 208           |
+| Panienski     | 208           |
+| Lowrie        | 208           |
+| Jenevein      | 208           |
+| Cesareni      | 208           |
+| Aloia         | 208           |
+| Garnier       | 207           |
+| Angelopoulos  | 207           |
+| Akazan        | 207           |
+| Lamba         | 207           |
+| Perng         | 206           |
+| Braunmuhl     | 206           |
+| Chimia        | 206           |
+| Duclos        | 206           |
+| Hebert        | 206           |
+| Bondorf       | 206           |
+| Gaughan       | 206           |
+| Foote         | 206           |
+| Matzov        | 205           |
+| Bennet        | 205           |
+| Onuegbe       | 205           |
+| Shimshoni     | 205           |
+| Siprelle      | 205           |
+| Marakhovsky   | 205           |
+| DeMori        | 205           |
+| Encarnacion   | 205           |
+| Lanphier      | 205           |
+| Geffroy       | 205           |
+| Panangaden    | 205           |
+| Ecklund       | 205           |
+| Ponthieu      | 205           |
+| Aamodt        | 205           |
+| Garnham       | 205           |
+| Emden         | 205           |
+| Linares       | 204           |
+| Argence       | 204           |
+| Whitcomb      | 204           |
+| Shiratori     | 204           |
+| Malinowski    | 204           |
++---------------+---------------+
++--------------+---------------+
+| duration_cnt | duration_dist |
++--------------+---------------+
+| 6            | 750           |
+| 7            | 712           |
+| 5            | 705           |
+| 8            | 611           |
+| 9            | 460           |
+| 4            | 450           |
+| 10           | 339           |
+| 3            | 324           |
+| 11           | 219           |
+| 12           | 170           |
+| 2            | 147           |
+| 13           | 96            |
+| 14           | 95            |
+| 50           | 70            |
+| 74           | 69            |
+| 43           | 66            |
+| 83           | 65            |
+| 85           | 65            |
+| 47           | 65            |
+| 28           | 65            |
+| 51           | 63            |
+| 23           | 62            |
+| 81           | 62            |
+| 18           | 62            |
+| 38           | 62            |
+| 49           | 62            |
+| 30           | 62            |
+| 24           | 61            |
+| 19           | 61            |
+| 69           | 60            |
+| 17           | 60            |
+| 59           | 59            |
+| 15           | 59            |
+| 42           | 59            |
+| 76           | 58            |
+| 37           | 58            |
+| 26           | 58            |
+| 80           | 58            |
+| 16           | 58            |
+| 48           | 58            |
+| 79           | 57            |
+| 27           | 57            |
+| 40           | 57            |
+| 60           | 57            |
+| 36           | 57            |
+| 41           | 57            |
+| 21           | 57            |
+| 66           | 57            |
+| 84           | 57            |
+| 58           | 56            |
+| 63           | 56            |
+| 78           | 56            |
+| 82           | 56            |
+| 44           | 55            |
+| 65           | 55            |
+| 73           | 55            |
+| 77           | 55            |
+| 39           | 54            |
+| 32           | 54            |
+| 45           | 53            |
+| 33           | 53            |
+| 61           | 52            |
+| 54           | 52            |
+| 29           | 52            |
+| 90           | 52            |
+| 75           | 52            |
+| 53           | 51            |
+| 70           | 51            |
+| 71           | 51            |
+| 86           | 50            |
+| 55           | 50            |
+| 25           | 50            |
+| 68           | 49            |
+| 52           | 49            |
+| 57           | 48            |
+| 56           | 48            |
+| 72           | 48            |
+| 34           | 47            |
+| 91           | 47            |
+| 20           | 46            |
+| 67           | 46            |
+| 64           | 45            |
+| 46           | 45            |
+| 35           | 44            |
+| 62           | 44            |
+| 94           | 42            |
+| 22           | 42            |
+| 87           | 40            |
+| 92           | 39            |
+| 89           | 38            |
+| 93           | 38            |
+| 31           | 37            |
+| 88           | 36            |
+| 95           | 36            |
+| 96           | 34            |
+| 99           | 34            |
+| 1            | 34            |
+| 98           | 33            |
+| 103          | 24            |
+| 101          | 22            |
++--------------+---------------+
++--------------------+-----+-------------+---------------+------------+
+| dept_name          | sex | total_count | working_count | left_count |
++--------------------+-----+-------------+---------------+------------+
+| Finance            | F   | 5961        | 5388          | 573        |
+| development        | M   | 47277       | 42512         | 4765       |
+| Quality Management | M   | 12039       | 10839         | 1200       |
+| Production         | M   | 35577       | 32069         | 3508       |
+| Customer Service   | F   | 9448        | 8453          | 995        |
+| Marketing          | M   | 8984        | 8134          | 850        |
+| Sales              | M   | 29810       | 26755         | 3055       |
+| Research           | F   | 8439        | 7601          | 838        |
+| Human Resources    | M   | 10711       | 9635          | 1076       |
+| Customer Service   | M   | 14132       | 12713         | 1419       |
+| Marketing          | F   | 5850        | 5304          | 546        |
+| development        | F   | 31437       | 28370         | 3067       |
+| Finance            | M   | 8756        | 7929          | 827        |
+| Quality Management | F   | 8078        | 7260          | 818        |
+| Production         | F   | 23912       | 21460         | 2452       |
+| Research           | M   | 12687       | 11427         | 1260       |
+| Sales              | F   | 19851       | 17954         | 1897       |
+| Human Resources    | F   | 7075        | 6354          | 721        |
++--------------------+-----+-------------+---------------+------------+
++--------------------+----------+----------+-------------------+
+| dept_name          | min(age) | max(age) | avg(age)          |
++--------------------+----------+----------+-------------------+
+| Sales              | 48       | 61       | 54.91617164374459 |
+| Human Resources    | 48       | 61       | 54.94900483526369 |
+| Production         | 48       | 61       | 54.93388693708081 |
+| Finance            | 48       | 61       | 54.9266154786981  |
+| Quality Management | 48       | 61       | 54.94397773027787 |
+| Research           | 48       | 61       | 54.90282116822873 |
+| Marketing          | 48       | 61       | 54.92153161655656 |
+| development        | 48       | 61       | 54.8962446324669  |
+| Customer Service   | 48       | 61       | 54.91675148430873 |
++--------------------+----------+----------+-------------------+
++--------------------+-----------+
+| title              | emp_count |
++--------------------+-----------+
+| Staff              | 107384    |
+| Senior Engineer    | 97747     |
+| Engineer           | 47303     |
+| Senior Staff       | 26583     |
+| Technique Leader   | 15148     |
+| Assistant Engineer | 5835      |
+| Manager            | 24        |
++--------------------+-----------+

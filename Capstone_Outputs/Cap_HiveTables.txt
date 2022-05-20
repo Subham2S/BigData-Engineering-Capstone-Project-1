@@ -1,0 +1,74 @@
+2022-05-20 22:37:58,456 main WARN JNDI lookup class is not available because this JRE does not support JNDI. JNDI string lookups will not be available, continuing configuration. Ignoring java.lang.ClassNotFoundException: org.apache.logging.log4j.core.lookup.JndiLookup
+d001	Marketing
+d002	Finance
+d003	Human Resources
+d004	Production
+d005	development
+d006	Quality Management
+d007	Sales
+d008	Research
+d009	Customer Service
+e0001	Assistant Engineer
+e0002	Engineer
+e0003	Senior Engineer
+e0004	Technique Leader
+m0001	Manager
+s0001	Staff
+s0002	Senior Staff
+10001	e0003	1953-09-02	Georgi	Facello	M	1986-06-26	9	C	1	1994-07-30
+10002	s0001	1964-06-02	Bezalel	Simmel	F	1985-11-21	8	B	0	NULL
+10003	e0003	1959-12-03	Parto	Bamford	M	1986-08-28	1	C	0	NULL
+10004	e0003	1954-05-01	Chirstian	Koblick	M	1986-12-01	5	A	0	NULL
+10005	s0001	1955-01-21	Kyoichi	Maliniak	M	1989-09-12	6	A	0	NULL
+10006	e0003	1953-04-20	Anneke	Preusig	F	1989-06-02	10	B	0	NULL
+10007	s0001	1957-05-23	Tzvetan	Zielinski	F	1989-02-10	6	B	1	2002-09-18
+10008	e0001	1958-02-19	Saniya	Kalloufi	M	1994-09-15	9	C	0	NULL
+10009	e0003	1952-04-19	Sumant	Peac	F	1985-02-18	8	B	0	NULL
+10010	e0002	1963-06-01	Duangkaew	Piveteau	F	1989-08-24	4	A	0	NULL
+d001	110022
+d001	110039
+d002	110085
+d002	110114
+d003	110183
+d003	110228
+d004	110303
+d004	110344
+d004	110386
+d004	110420
+10001	d005
+10002	d007
+10003	d004
+10004	d004
+10005	d003
+10006	d005
+10007	d008
+10008	d005
+10009	d006
+10010	d004
+10001	d005
+10002	d007
+10003	d004
+10004	d004
+10005	d003
+10006	d005
+10007	d008
+10008	d005
+10009	d006
+10010	d006
+10001	60117
+10002	65828
+10003	40006
+10004	40054
+10005	78228
+10006	40000
+10007	56724
+10008	46671
+10009	60929
+10010	72488
+departments	9
+dept_emp	331603
+dept_emp1	300024
+dept_manager	24
+employees	300024
+salaries	300024
+titles	7

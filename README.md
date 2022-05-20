@@ -69,7 +69,7 @@ hdfs dfs -mkdir /user/anabig114212/hive/warehouse/Capstone
 ```
 - Removes & Creates the Warehouse/Capstome dir to avoid anomalies between same named files
 
-### scoop
+### sqoop
 ```bash
 sqoop import-all-tables --connect jdbc:mysql://ip-10-1-1-204.ap-south-1.compute.internal:3306/anabig114212 --username anabig114212 --password Bigdata123 --compression-codec=snappy --as-avrodatafile --warehouse-dir=/user/anabig114212/hive/warehouse/Capstone --m 1 --driver com.mysql.jdbc.Driver
 ```

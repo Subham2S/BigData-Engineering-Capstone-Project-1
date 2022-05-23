@@ -111,7 +111,7 @@ hive -f HiveTables.sql > /home/anabig114212/Capstone_Outputs/Cap_HiveTables.txt
 spark-submit capstone.py > /home/anabig114212/Capstone_Outputs/Cap_SparkSQL_EDA_ML.txt
 ```
 - This capstone.py does everything. First it loads the tables and creates spark dataframes, then checks all the records again. After that Same EDA analysis is performed with the aid of sparkSQL & pySpark. 
-- After EDA, it checks stats for Numerical & Categocial Variables. Then proceeds towards model buliding after creating final df with joining the tables and dropping irrelevant columns. As per the choosen target variable 'left', the independent variables were divided into continuous and categorical variables, and in the categorical variables, two columns were label encoded manually and the rest were processed for OneHotEncoding. 
+- After EDA, it checks stats for Numerical & Categocial Variables. Then proceeds towards model buliding after creating final df with joining the tables and dropping irrelevant columns. As per the chosen target variable 'left', the independent variables were divided into continuous and categorical variables, and in the categorical variables, two columns were label encoded manually and the rest were processed for OneHotEncoding. 
 - Then, based on previous experience of EDA, both Random Forest Classification Model and Logistic Regression Model are choosen for this dataset. And as per the analysis the accuracies were 99% (RF) and 90% (LR). Model were fitted on test and train (0.3 : 0.7) and gave same accuracy. Considering these as good-fits, both the models were saved.
 - After that a Pipeline was created and same analysis were performed in a streamlined manner to build these models.
 

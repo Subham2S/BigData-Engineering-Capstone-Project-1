@@ -1,7 +1,7 @@
 find . -name "*.avsc" -exec rm {} \;
 find . -name "*.java" -exec rm {} \;
-rm -r Capstone_Outputs
-mkdir Capstone_Outputs
+rm -r /home/anabig114212/Capstone_Outputs
+mkdir /home/anabig114212/Capstone_Outputs
 cp -r /home/anabig114212/Capstone_Inputs/* /home/anabig114212/
 mysql -u anabig114212 -pBigdata123 -D anabig114212 -e 'source CreateMySQLTables.sql' > /home/anabig114212/Capstone_Outputs/Cap_MySQLTables.txt
 hdfs dfs -rm -r /user/anabig114212/hive/warehouse/Capstone

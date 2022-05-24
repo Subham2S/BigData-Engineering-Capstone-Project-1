@@ -49,8 +49,8 @@ find . -name "*.java" -exec rm {} \;
 ```
 - Removes the Java MapReduce Codes which are there in the Root dir (created by the sqoop command when the code was run last time)
 ```bash
-rm -r Capstone_Outputs
-mkdir Capstone_Outputs
+rm -r /home/anabig114212/Capstone_Outputs
+mkdir /home/anabig114212/Capstone_Outputs
 ```
 - Removes the current Capstone_Outputs Folder and Creates a new dir "Capstone_Outputs" - Here all the Outputs will be stored.
 ```bash

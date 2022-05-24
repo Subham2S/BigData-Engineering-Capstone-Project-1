@@ -16,7 +16,7 @@ from pyspark.ml.evaluation import MulticlassClassificationEvaluator, BinaryClass
 from pyspark.ml.classification import RandomForestClassifier
 from pyspark.ml import Pipeline
 from pyspark.ml.feature \
-    import OneHotEncoder, StringIndexer, VectorAssembler
+    import OneHotEncoderEstimator, StringIndexer, VectorAssembler
 
 spark = SparkSession.builder.appName("Subham_Capstone").config(
     "hive.metastore.uris",
@@ -744,12 +744,6 @@ df_bkup = df
 
 # ### One-Hot-Encoding :
 
-# In[95]:
-
-
-input_Cols_OHE = ['sex', 'dept_name']
-
-
 # In[96]:
 
 
@@ -773,26 +767,17 @@ df.select('sex', 'sex_Index', 'dept_name', 'dept_name_Index').show(10)
 
 # In[98]:
 
-
 # create object and specify input and output column
-OHE_sex = OneHotEncoder(inputCol='sex_Index', outputCol='sex_vec')
-OHE_dept_name = OneHotEncoder(
-    inputCol='dept_name_Index',
-    outputCol='dept_name_vec')
+OHE_sex = OneHotEncoderEstimator(inputCols=['sex_Index'],outputCols=['sex_vec'])
+OHE_dept_name = OneHotEncoderEstimator(inputCols=['dept_name_Index'],outputCols=['dept_name_vec'])
 
 # transform the data
-df = OHE_sex.transform(df)
-df = OHE_dept_name.transform(df)
+df = OHE_sex.fit(df).transform(df)
+df = OHE_dept_name.fit(df).transform(df)
 
 # view and transform the data
-df.select(
-    'sex',
-    'sex_Index',
-    'sex_vec',
-    'dept_name',
-    'dept_name_Index',
-    'dept_name_vec').show(10)
-
+df.select('sex', 'sex_Index','sex_vec', \
+          'dept_name', 'dept_name_Index','dept_name_vec').show(10)
 
 # In[99]:
 
@@ -1046,40 +1031,43 @@ df_pl.show()
 # In[78]:
 
 
-Vec_A_InputCol = [
-    'no_of_projects',
-    'last_performance_rating',
-    'Age',
-    'Tenure_Years',
-    'title',
-    'salary',
-    'sex_vec',
-    'dept_name_vec']
+conCols = [
+'no_of_projects',
+ 'last_performance_rating',
+ 'Age',
+ 'Tenure_Years',
+ 'title',
+ 'salary']
+
+catCols = ['sex', 'dept_name']
 
 
 # In[79]:
 
 
 # String Indexer
-SI_sex = StringIndexer(inputCol='sex', outputCol='sex_vec')
-SI_dept_name = StringIndexer(inputCol='dept_name', outputCol='dept_name_vec')
+indexers = [StringIndexer(inputCol=column, outputCol=column+"_Index") for column in catCols ]
+
+# One Hot Encoder Estimator
+encoders = OneHotEncoderEstimator(inputCols=[i.getOutputCol() for i in indexers], \
+                                  outputCols=[i.getOutputCol()+"_vec" for i in indexers])
 
 # Vector Assembler
-assembler = VectorAssembler(inputCols=Vec_A_InputCol, outputCol="features")
+assembler = VectorAssembler(inputCols = encoders.getOutputCols() + conCols, outputCol = "features")
 
 # ML Models
 rfc = RandomForestClassifier(featuresCol="features",
-                             labelCol="label",
-                             numTrees=50,
-                             maxDepth=5,
-                             featureSubsetStrategy='onethird')
+                              labelCol="label",
+                              numTrees=50,
+                              maxDepth=5,
+                              featureSubsetStrategy='onethird')
 mlr = LogisticRegression(maxIter=10,
                          regParam=0.3,
                          elasticNetParam=0.8,
                          family="multinomial")
 # Creating Pipelines
-pipeline_rfc = Pipeline(stages=[SI_sex, SI_dept_name, assembler, rfc])
-pipeline_mlr = Pipeline(stages=[SI_sex, SI_dept_name, assembler, mlr])
+pipeline_rfc = Pipeline(stages = indexers + [encoders, assembler, rfc])
+pipeline_mlr = Pipeline(stages = indexers + [encoders, assembler, mlr])
 
 
 # In[80]:
@@ -1198,8 +1186,18 @@ print(
         metricName="areaUnderROC").evaluate(pred_mlr))
 
 
-# The Accuracies between the built models and the Pipeline models are slightly
-# different because the OneHotEncoding step was skipped in the Pipeline
-# Staging.
+'''
+    The Accuracies between the built models and the Pipeline models are very close.
+
+    The reason behind the slight change in the accuracies is that the eariler case,
+    the train & test split was performed after fitting the assembler but in case of ML pipeline,
+    the assembler is inside the stages so assembler is fitting on split datasets seperately as a
+    part of the pipeline.
+
+    This is also clearly visible in the features column as well.
+
+    So, this was a good test of the pipeline models in terms of accuracy and
+    we can conclude that the ML Pipeline is working properly.
+'''
 
 # #### -End-

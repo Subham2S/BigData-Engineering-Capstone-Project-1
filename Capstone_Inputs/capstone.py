@@ -899,7 +899,7 @@ model_rf, pred_rf = train(train_df, test_df, rfc)
 pred_rf.show()
 
 
-# ### Area under ROC (Randome Forest Model)
+# ### Area under ROC (Random Forest Model)
 
 # In[71]:
 
@@ -1135,7 +1135,7 @@ pred_rfc = accuracy_check(pred_rfc)
 pred_rfc.select('label', 'features', 'prediction').show(10)
 
 
-# ### Area under ROC (Randome Forest Model)
+# ### Area under ROC (Random Forest Model)
 
 # In[83]:
 
@@ -1166,7 +1166,7 @@ pred_mlr = accuracy_check(pred_mlr)
 pred_mlr.select('label', 'features', 'prediction').show(10)
 
 
-# ### Area under ROC (Randome Forest Model)
+# ### Area under ROC (Random Forest Model)
 
 # In[85]:
 

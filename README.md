@@ -1,7 +1,7 @@
  
 # **BigData Engineering Capstone Project 1**
 ## Summary
-Objective is to work on data engineering project for one of the big corporation's employees data from the 1980s and 1995s. All the database of employees from that period are provided six CSV files. In this project, I have designed data model with all the tables to hold data, imported the CSVs into a SQL database, transfered SQL database to HDFS/Hive, and performed analysis using Hive/Impala/Spark/SparkML using the data and created data and ML pipelines.
+Objective is to work on data engineering project for one of the big corporation's employee's data from the 1980s and 1995s. All the database of employees from that period are provided six CSV files. In this project, I have designed data model with all the tables to hold data, imported the CSVs into a SQL database, transferred SQL database to HDFS/Hive, and performed analysis using Hive/Impala/Spark/SparkML using the data and created data and ML pipelines.
 
 ## Process
 Importing data from MySQL RDBMS to HDFS using Sqoop, Creating HIVE Tables with compressed file format (avro), Explanatory Data Analysis with Impala & SparkSQL and Building Random Forest Classifer Model & Logistic Regression Model using SparkML.
@@ -111,9 +111,10 @@ hive -f HiveTables.sql > /home/anabig114212/Capstone_Outputs/Cap_HiveTables.txt
 spark-submit capstone.py > /home/anabig114212/Capstone_Outputs/Cap_SparkSQL_EDA_ML.txt
 ```
 - This capstone.py does everything. First it loads the tables and creates spark dataframes, then checks all the records again. After that Same EDA analysis is performed with the aid of sparkSQL & pySpark. 
-- After EDA, it checks stats for Numerical & Categocial Variables. Then proceeds towards model buliding after creating final df with joining the tables and dropping irrelevant columns. As per the chosen target variable 'left', the independent variables were divided into continuous and categorical variables, and in the categorical variables, two columns were label encoded manually and the rest were processed for OneHotEncoding. 
-- Then, based on previous experience of EDA, both Random Forest Classification Model and Logistic Regression Model are choosen for this dataset. And as per the analysis the accuracies were 99% (RF) and 90% (LR). Model were fitted on test and train (0.3 : 0.7) and gave same accuracy. Considering these as good-fits, both the models were saved.
-- After that a Pipeline was created and same analysis were performed in a streamlined manner to build these models.
+- After EDA, it checks stats for Numerical & Categorical Variables. Then proceeds towards model building after creating final df with joining the tables and dropping irrelevant columns. As per the chosen target variable 'left', the independent variables were divided into continuous and categorical variables, and in the categorical variables, two columns were label encoded manually and the rest were processed for One-Hot Encoding. 
+- Then, based on previous experience of EDA, both Random Forest Classification Model and Logistic Regression Model are chosen for this dataset. And as per the analysis the accuracies were 99% (RF) and 90% (LR). Model were fitted on test and train (0.3: 0.7) and gave same accuracy. Considering these as good fits, both the models were saved.
+- After that a Pipeline was created and same analysis were performed in a streamlined manner to build these models. The Accuracies between the built models and the Pipeline models are very close. The reason behind the slight change in the accuracies is that the earlier case, the train & test split was performed after fitting the assembler but in case of ML pipeline, the assembler is inside the stages, so assembler is fitting on split datasets separately as a part of the pipeline. This is also clearly visible in the features column as well. So, this was a good test of the pipeline models in terms of accuracy, and we can conclude that the ML Pipeline is working properly.
+
 
 ### Collecting the Models
 ```bash
@@ -126,7 +127,7 @@ rm -r /home/anabig114212/Capstone_Outputs/logistic_regression.model
 ```
 
 ## Reference Files
-The following  files are added for your reference.
+The following files are added for your reference.
 1. Capstone.ipynb
 2. Capstone Project1.pptx, Capstone Project1.pdf 
 2. Capstone.zip

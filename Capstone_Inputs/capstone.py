@@ -1166,7 +1166,7 @@ pred_mlr = accuracy_check(pred_mlr)
 pred_mlr.select('label', 'features', 'prediction').show(10)
 
 
-# ### Area under ROC (Random Forest Model)
+# ### Area under ROC (Logistic Regression Model)
 
 # In[85]:
 

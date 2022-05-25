@@ -67,7 +67,7 @@ mysql -u anabig114212 -pBigdata123 -D anabig114212 -e 'source CreateMySQLTables.
 hdfs dfs -rm -r /user/anabig114212/hive/warehouse/Capstone
 hdfs dfs -mkdir /user/anabig114212/hive/warehouse/Capstone
 ```
-- Removes & Creates the Warehouse/Capstome dir to avoid anomalies between same named files
+- Removes & Creates the Warehouse/Capstone dir to avoid anomalies between same named files
 
 ### sqoop
 ```bash

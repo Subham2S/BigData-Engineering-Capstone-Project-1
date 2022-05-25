@@ -94,7 +94,7 @@ hadoop fs -chmod +rwx /user/anabig114212/hive/warehouse/Capstone/*
 ```bash
 hive -f HiveDB.hql > /home/anabig114212/Capstone_Outputs/Cap_HiveDB.txt 
 ```
-- Basically all the hive Tables are created as AVRO format. In the .hql file Table location and its metadata (schema) locations are mentioned seperately.
+- Basically all the hive Tables are created as AVRO format. In the .hql file Table location and its metadata (schema) locations are mentioned separately.
 
 ### Impala (.sql)
 ```bash

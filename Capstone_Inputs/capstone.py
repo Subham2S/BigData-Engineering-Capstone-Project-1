@@ -528,7 +528,7 @@ emp_tsd = employees.join(
                     'left2',
     'left')
 emp_tsd.toPandas().head(10)
-
+emp_tsd.cache()
 
 # In[43]:
 
@@ -740,7 +740,7 @@ df.show()
 
 # Back_Up df after Label Encoding
 df_bkup = df
-
+df.cache()
 
 # ### One-Hot-Encoding :
 
@@ -871,11 +871,11 @@ def train(train_, test_, classifier):
     f_1 = eval_f1.evaluate(pred)
 
     print(f"""
-  Accuracy  = {accuracy}
-  Error     = {1-accuracy}
-  Precision = {precision}
-  Recall    = {recall}
-  F1        = {f_1}""")
+    Accuracy  = {accuracy}
+    Error     = {1-accuracy}
+    Precision = {precision}
+    Recall    = {recall}
+    F1        = {f_1}""")
 
     return model, pred
 
@@ -1115,11 +1115,11 @@ def accuracy_check(pred):
     f_1 = eval_f1.evaluate(pred)
 
     print(f"""
-  Accuracy  = {accuracy}
-  Error     = {1-accuracy}
-  Precision = {precision}
-  Recall    = {recall}
-  F1        = {f_1}""")
+    Accuracy  = {accuracy}
+    Error     = {1-accuracy}
+    Precision = {precision}
+    Recall    = {recall}
+    F1        = {f_1}""")
 
     return pred
 

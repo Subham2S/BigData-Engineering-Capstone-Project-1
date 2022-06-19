@@ -41,16 +41,16 @@ After approx. 10-15 mins Capstone_Ouputs Folder will be generated with all the o
 
 ### Linux Commands
 ```bash
-find . -name "*.avsc" -exec rm {} \;
+find . -name "*.avsc" -exec rm {}  \;
 ```
 - Removes the metadata of the tables which are there in the Root dir (created by the sqoop command when the code was run last time)
 ```bash
-find . -name "*.java" -exec rm {} \;
+find . -name "*.java" -exec rm {}  \;
 ```
 - Removes the Java MapReduce Codes which are there in the Root dir (created by the sqoop command when the code was run last time)
 ```bash
 rm -r /home/anabig114212/Capstone_Outputs
-mkdir /home/anabig114212/Capstone_Outputs
+mkdir -p /home/anabig114212/Capstone_Outputs
 ```
 - Removes the current Capstone_Outputs Folder and Creates a new dir "Capstone_Outputs" - Here all the Outputs will be stored.
 ```bash
@@ -65,7 +65,7 @@ mysql -u anabig114212 -pBigdata123 -D anabig114212 -e 'source CreateMySQLTables.
 - Creates MySQL tables & Inserts data
 ```bash
 hdfs dfs -rm -r /user/anabig114212/hive/warehouse/Capstone
-hdfs dfs -mkdir /user/anabig114212/hive/warehouse/Capstone
+hdfs dfs -mkdir -p /user/anabig114212/hive/warehouse/Capstone
 ```
 - Removes & Creates the Warehouse/Capstone dir to avoid anomalies between same named files
 
@@ -78,7 +78,7 @@ sqoop import-all-tables --connect jdbc:mysql://ip-10-1-1-204.ap-south-1.compute.
 ### HDFS Commands
 ```bash
 hdfs dfs -rm -r /user/anabig114212/hive/avsc
-hdfs dfs -mkdir /user/anabig114212/hive/avsc
+hdfs dfs -mkdir -p /user/anabig114212/hive/avsc
 hdfs dfs -put  departments.avsc /user/anabig114212/hive/avsc/departments.avsc
 hdfs dfs -put  titles.avsc /user/anabig114212/hive/avsc/titles.avsc
 hdfs dfs -put  employees.avsc /user/anabig114212/hive/avsc/employees.avsc

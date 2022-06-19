@@ -2,6 +2,12 @@ DROP DATABASE IF EXISTS anabig114212_cap CASCADE;
 CREATE DATABASE anabig114212_cap;
 USE anabig114212_cap;
 
+SET mapreduce.input.fileinputformat.split.maxsize = 67108864;
+SET mapreduce.map.memory.mb = 2048;
+SET mapreduce.reduce.memory.mb = 2048;
+SET mapreduce.map.output.compress = true;
+SET mapreduce.map.output.compress.codec = org.apache.hadoop.io.compress.SnappyCodec;
+
 CREATE EXTERNAL TABLE departments STORED AS AVRO LOCATION '/user/anabig114212/hive/warehouse/Capstone/departments' TBLPROPERTIES ('avro.schema.url'='/user/anabig114212/hive/avsc/departments.avsc');
 CREATE EXTERNAL TABLE titles STORED AS AVRO LOCATION '/user/anabig114212/hive/warehouse/Capstone/titles' TBLPROPERTIES ('avro.schema.url'='/user/anabig114212/hive/avsc/titles.avsc');
 CREATE EXTERNAL TABLE employees STORED AS AVRO LOCATION '/user/anabig114212/hive/warehouse/Capstone/employees' TBLPROPERTIES ('avro.schema.url'='/user/anabig114212/hive/avsc/employees.avsc');

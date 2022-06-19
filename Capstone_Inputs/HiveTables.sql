@@ -1,5 +1,11 @@
 USE anabig114212_cap;
 
+SET mapreduce.input.fileinputformat.split.maxsize = 67108864;
+SET mapreduce.map.memory.mb = 2048;
+SET mapreduce.reduce.memory.mb = 2048;
+SET mapreduce.map.output.compress = true;
+SET mapreduce.map.output.compress.codec = org.apache.hadoop.io.compress.SnappyCodec;
+
 DROP TABLE IF EXISTS dept_emp1;
 CREATE TABLE dept_emp1 AS
 SELECT a.emp_no, a.dept_no 

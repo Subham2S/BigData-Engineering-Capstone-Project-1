@@ -10,24 +10,27 @@ Objective is to work on data engineering project for one of the big corporation'
 
 Importing data from MySQL RDBMS to HDFS using Sqoop, Creating HIVE Tables with compressed file format (avro), Explanatory Data Analysis with Impala & SparkSQL and Building Random Forest Classifer Model & Logistic Regression Model using SparkML.
 
-### Step - 1️⃣
+### **Step** 1️⃣
 
 **Upload the Capstone_Inputs Folder in Client home dir which contains :**
 
-- Capstone_P1.sh
-- CreateMySQLTables.sql
-- EDA.sql
-- HiveTables.sql
-- HiveDB.hql
-- capstone.py
-- departments.csv
-- dept_emp.csv
-- dept_manager.csv
-- employees.csv
-- salaries.csv
-- titles.csv
+- `Capstone_P1.sh`
+- `CreateMySQLTables.sql`
+- `EDA.sql`
+- `HiveTables.sql`
+- `HiveDB.hql`
+- `capstone.py`
 
-### Step - 2️⃣
+**Datasets :**
+
+- `departments.csv`
+- `dept_emp.csv`
+- `dept_manager.csv`
+- `employees.csv`
+- `salaries.csv`
+- `titles.csv`
+
+### **Step** 2️⃣
 
 **Run the Bash Script `Capstone_P1.sh` file in Terminal**
 
@@ -35,17 +38,17 @@ Importing data from MySQL RDBMS to HDFS using Sqoop, Creating HIVE Tables with c
 $ sh /home/anabig114212/Capstone_Inputs/Capstone_P1.sh
 ```
 
-### Step - 3️⃣
+### **Step** 3️⃣
 
 **Wait for a while and download the Capstone_Outputs Folder** <br>
 After approx. 10-15 mins Capstone_Ouputs Folder will be generated with all the output files : <br>
-**1. Cap_MySQLTables.txt** - To Check MySQL Tables. <br>
-**2. Cap_HiveDB.txt** - To Ensure that Hive Tables were created. <br>
-**3. Cap_ImpalaAnalysis.txt** - All EDA output tables from Impala. <br>
-**4. Cap_HiveTables.txt** - To Check records in Hive Tables and dept_emp1 is created additionally to fix some duplicate issues which were present in dept_emp. <br>
-**5. Cap_SparkSQL_EDA_ML.txt** - All EDA output tables from SparkSQL, pySpark and all the details of the Models (both Random Forest & Logistic Regression) <br>
-**6. random_forest.model.zip** <br>
-**7. logistic_regression.model.zip** <br>
+**1. `Cap_MySQLTables.txt`** - To Check MySQL Tables. <br>
+**2. `Cap_HiveDB.txt`** - To Ensure that Hive Tables were created. <br>
+**3. `Cap_ImpalaAnalysis.txt`** - All EDA output tables from Impala. <br>
+**4. `Cap_HiveTables.txt`** - To Check records in Hive Tables and dept_emp1 is created additionally to fix some duplicate issues which were present in dept_emp. <br>
+**5. `Cap_SparkSQL_EDA_ML.txt`** - All EDA output tables from SparkSQL, pySpark and all the details of the Models (both Random Forest & Logistic Regression) <br>
+**6. `random_forest.model.zip`** <br>
+**7. `logistic_regression.model.zip`** <br>
 
 ## 🔍 Details of `Capstone_P1.sh`
 
@@ -68,7 +71,7 @@ rm -r /home/anabig114212/Capstone_Outputs
 mkdir -p /home/anabig114212/Capstone_Outputs
 ```
 
-- Removes the current Capstone_Outputs Folder and Creates a new dir "Capstone_Outputs" - Here all the Outputs will be stored.
+- Removes the current `Capstone_Outputs` Folder and Creates a new dir `Capstone_Outputs` - Here all the Outputs will be stored.
 
 ```bash
 cp -r /home/anabig114212/Capstone_Inputs/* /home/anabig114212/
@@ -89,7 +92,7 @@ hdfs dfs -rm -r /user/anabig114212/hive/warehouse/Capstone
 hdfs dfs -mkdir -p /user/anabig114212/hive/warehouse/Capstone
 ```
 
-- Removes & Creates the Warehouse/Capstone dir to avoid anomalies between same named files
+- Removes & Creates the `Warehouse/Capstone` dir to avoid anomalies between same named files
 
 ### sqoop
 
@@ -122,7 +125,7 @@ hadoop fs -chmod +rwx /user/anabig114212/hive/warehouse/Capstone/*
 hive -f HiveDB.hql > /home/anabig114212/Capstone_Outputs/Cap_HiveDB.txt
 ```
 
-- Basically all the hive Tables are created as AVRO format. In the .hql file Table location and its metadata (schema) locations are mentioned separately.
+- All the hive Tables are created as AVRO format. In the `HiveDB.hql` file Table location and its metadata (schema) locations are mentioned separately.
 
 ### Impala (`.sql`)
 

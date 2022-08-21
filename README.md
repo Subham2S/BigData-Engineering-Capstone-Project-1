@@ -1,7 +1,7 @@
 # **BigData Engineering Capstone Project 1**
 
-![](https://img.shields.io/badge/Tech--Stack-Linux%20--%20MySQL%20--%20sqoop%20--%20HDFS%20--%20Hive%20--%20Impala%20--%20Spark%20SQL%20--%20PySpark%20--%20Spark%20ML%20--%20Git-blue)
 ![](https://img.shields.io/badge/%F0%9F%94%96-Employee%20Attrition%20Analysis%20--%20Human%20Resouce%20Domain-blueviolet)
+![](https://img.shields.io/badge/Tech--Stack-Linux%20--%20MySQL%20--%20sqoop%20--%20HDFS%20--%20Hive%20--%20Impala%20--%20Spark%20SQL%20--%20PySpark%20--%20Spark%20ML%20--%20Git-blue)
 
 ## 📜 Summary
 

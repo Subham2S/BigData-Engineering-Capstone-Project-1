@@ -2,5 +2,6 @@
 *.sql linguist-detectable=true
 *.sh linguist-detectable=true
 *.py linguist-detectable=true
+*.md linguist-detectable=true
 https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone.ipynb linguist-vendored
 *.ipynb linguist-detectable=false

@@ -7,5 +7,5 @@ README.md linguist-vendored=false
 *.md linguist-language=Markdown
 *.md linguist-detectable=true
 
-Capstone.ipynb linguist-vendored
+Capstone.ipynb linguist-vendored=true
 *.ipynb linguist-detectable=false

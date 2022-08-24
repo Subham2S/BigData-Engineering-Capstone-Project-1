@@ -86,7 +86,7 @@ cp -r /home/anabig114212/Capstone_Inputs/* /home/anabig114212/
 mysql -u anabig114212 -pBigdata123 -D anabig114212 -e 'source CreateMySQLTables.sql' > /home/anabig114212/Capstone_Outputs/Cap_MySQLTables.txt
 ```
 
-- Creates MySQL tables & Inserts data
+- Creates MySQL tables & Inserts data. For more details check out [`CreateMySQLTables.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/CreateMySQLTables.sql)
 
 ```bash
 hdfs dfs -rm -r /user/anabig114212/hive/warehouse/Capstone

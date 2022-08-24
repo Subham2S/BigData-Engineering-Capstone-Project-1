@@ -15,21 +15,21 @@ Importing data from MySQL RDBMS to HDFS using Sqoop, Creating HIVE Tables with c
 
 **Upload the Capstone_Inputs Folder in Client home dir which contains :**
 
-- `Capstone_P1.sh`
-- `CreateMySQLTables.sql`
-- `EDA.sql`
-- `HiveTables.sql`
-- `HiveDB.hql`
-- `capstone.py`
+- [`Capstone_P1.sh`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/Capstone_P1.sh)
+- [`CreateMySQLTables.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/CreateMySQLTables.sql)
+- [`EDA.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/EDA.sql)
+- [`HiveTables.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/HiveTables.sql)
+- [`HiveDB.hql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/HiveDB.hql)
+- [`capstone.py`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/capstone.py)
 
 **Datasets :**
 
-- `departments.csv`
-- `dept_emp.csv`
-- `dept_manager.csv`
-- `employees.csv`
-- `salaries.csv`
-- `titles.csv`
+- [`departments.csv`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/departments.csv)
+- [`dept_emp.csv`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/dept_emp.csv)
+- [`dept_manager.csv`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/dept_manager.csv)
+- [`employees.csv`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/employees.csv)
+- [`salaries.csv`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/salaries.csv)
+- [`titles.csv`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/titles.csv)
 
 ### **Step** 2️⃣
 
@@ -43,13 +43,13 @@ $ sh /home/anabig114212/Capstone_Inputs/Capstone_P1.sh
 
 **Wait for a while and download the Capstone_Outputs Folder** <br>
 After approx. 10-15 mins Capstone_Ouputs Folder will be generated with all the output files : <br>
-**1. `Cap_MySQLTables.txt`** - To Check MySQL Tables. <br>
-**2. `Cap_HiveDB.txt`** - To Ensure that Hive Tables were created. <br>
-**3. `Cap_ImpalaAnalysis.txt`** - All EDA output tables from Impala. <br>
-**4. `Cap_HiveTables.txt`** - To Check records in Hive Tables and dept_emp1 is created additionally to fix some duplicate issues which were present in dept_emp. <br>
-**5. `Cap_SparkSQL_EDA_ML.txt`** - All EDA output tables from SparkSQL, pySpark and all the details of the Models (both Random Forest & Logistic Regression) <br>
-**6. `random_forest.model.zip`** <br>
-**7. `logistic_regression.model.zip`** <br>
+**1. [`Cap_MySQLTables.txt`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Outputs/Cap_MySQLTables.txt)** - To Check MySQL Tables. <br>
+**2. [`Cap_HiveDB.txt`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Outputs/Cap_HiveDB.txt)** - To Ensure that Hive Tables were created. <br>
+**3. [`Cap_ImpalaAnalysis.txt`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Outputs/Cap_ImpalaAnalysis.txt)** - All EDA output tables from Impala. <br>
+**4. [`Cap_HiveTables.txt`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Outputs/Cap_HiveTables.txt)** - To Check records in Hive Tables and dept_emp1 is created additionally to fix some duplicate issues which were present in dept_emp. <br>
+**5. [`Cap_SparkSQL_EDA_ML.txt`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Outputs/Cap_SparkSQL_EDA_ML.txt)** - All EDA output tables from SparkSQL, pySpark and all the details of the Models (both Random Forest & Logistic Regression) <br>
+**6. [`random_forest.model.zip`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Outputs/random_forest.model.zip)** <br>
+**7. [`logistic_regression.model.zip`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Outputs/logistic_regression.model.zip)** <br>
 
 ## 🔍 Details of `Capstone_P1.sh`
 
@@ -126,7 +126,7 @@ hadoop fs -chmod +rwx /user/anabig114212/hive/warehouse/Capstone/*
 hive -f HiveDB.hql > /home/anabig114212/Capstone_Outputs/Cap_HiveDB.txt
 ```
 
-- All the hive Tables are created as AVRO format. In the `HiveDB.hql` file Table location and its metadata (schema) locations are mentioned separately. For more details, please check out [`HiveDB.hql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/HiveDB.hql)
+- All the hive Tables are created as AVRO format. In the [`HiveDB.hql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/HiveDB.hql) file Table location and its metadata (schema) locations are mentioned separately.
 
 ### Impala (`.sql`)
 
@@ -168,7 +168,7 @@ rm -r /home/anabig114212/Capstone_Outputs/logistic_regression.model
 
 The following files are added for your reference.
 
-1. `Capstone.ipynb`
-2. `Capstone Project1.pptx`, `Capstone Project1.pdf`
-3. `Capstone.zip`
-4. `ERD_Data Model.jpg`, `ERD_Data Model.svg`
+1. [`Capstone.ipynb`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone.ipynb)
+2. [`Capstone Project1.pptx`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone%20Project1.pptx), [`Capstone Project1.pdf`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone%20Project1.pdf)
+3. [`Capstone.zip`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone.zip)
+4. [`ERD_Data Model.jpg`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/ERD_Data%20Model.jpg), [`ERD_Data Model.svg`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/ERD_Data%20Model.svg)

@@ -86,7 +86,7 @@ cp -r /home/anabig114212/Capstone_Inputs/* /home/anabig114212/
 mysql -u anabig114212 -pBigdata123 -D anabig114212 -e 'source CreateMySQLTables.sql' > /home/anabig114212/Capstone_Outputs/Cap_MySQLTables.txt
 ```
 
-- Creates MySQL tables & Inserts data. For more details check out [`CreateMySQLTables.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/CreateMySQLTables.sql)
+- Creates MySQL tables & Inserts data. For more details, please check out [`CreateMySQLTables.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/CreateMySQLTables.sql)
 
 ```bash
 hdfs dfs -rm -r /user/anabig114212/hive/warehouse/Capstone
@@ -126,7 +126,7 @@ hadoop fs -chmod +rwx /user/anabig114212/hive/warehouse/Capstone/*
 hive -f HiveDB.hql > /home/anabig114212/Capstone_Outputs/Cap_HiveDB.txt
 ```
 
-- All the hive Tables are created as AVRO format. In the `HiveDB.hql` file Table location and its metadata (schema) locations are mentioned separately.
+- All the hive Tables are created as AVRO format. In the `HiveDB.hql` file Table location and its metadata (schema) locations are mentioned separately. For more details, please check out [`HiveDB.hql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/HiveDB.hql)
 
 ### Impala (`.sql`)
 
@@ -134,13 +134,13 @@ hive -f HiveDB.hql > /home/anabig114212/Capstone_Outputs/Cap_HiveDB.txt
 impala-shell -i ip-10-1-2-103.ap-south-1.compute.internal -f EDA.sql > /home/anabig114212/Capstone_Outputs/Cap_ImpalaAnalysis.txt
 ```
 
-- Explanatory Data Analysis is done with Impala.
+- Explanatory Data Analysis is done with Impala. For more details, please check out [`EDA.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/EDA.sql)
 
 ```bash
 hive -f HiveTables.sql > /home/anabig114212/Capstone_Outputs/Cap_HiveTables.txt
 ```
 
-- Checking all the records of the Hive Tables before moving to spark.
+- Checking all the records of the Hive Tables before moving to spark. For more details, please check out [`HiveTables.sql`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/HiveTables.sql)
 
 ### Spark (`.py`)
 
@@ -148,6 +148,7 @@ hive -f HiveTables.sql > /home/anabig114212/Capstone_Outputs/Cap_HiveTables.txt
 spark-submit capstone.py > /home/anabig114212/Capstone_Outputs/Cap_SparkSQL_EDA_ML.txt
 ```
 
+- [`capstone.py`](https://github.com/Subham2S/BigData-Engineering-Capstone-Project-1/blob/main/Capstone_Inputs/capstone.py)
 - This `capstone.py` does everything. First it loads the tables and creates spark dataframes, then checks all the records again. After that Same EDA analysis is performed with the aid of sparkSQL & pySpark.
 - After EDA, it checks stats for Numerical & Categorical Variables. Then proceeds towards model building after creating final df with joining the tables and dropping irrelevant columns. As per the chosen target variable 'left', the independent variables were divided into continuous and categorical variables, and in the categorical variables, two columns were label encoded manually and the rest were processed for One-Hot Encoding.
 - Then, based on previous experience of EDA, both Random Forest Classification Model and Logistic Regression Model are chosen for this dataset. And as per the analysis the accuracies were 99% (RF) and 90% (LR). Model were fitted on test and train (0.3: 0.7) and gave same accuracy. Considering these as good fits, both the models were saved.

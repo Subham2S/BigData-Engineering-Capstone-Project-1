@@ -8,7 +8,7 @@
 
 ## 📜 Summary
 
-One of the big corporations needed data engineering services for a decade's worth of employee data. All employee datasets from that period were provided in six CSV files. The first step of this project was to create an Entity Relation Diagram and create a database in an RDBMS with all the tables for structuring and holding the data as per the relations between the tables. So, I imported the CSVs into a MySQL database, transferred to HDFS/Hive in a optimized format, and analyzed with Hive, Impala, Spark, and SparkML. Finally, I created a Bash Script to facilitate the end-to-end data pipeline and machine learning pipeline for automation purposes.
+One of the big corporations needed data engineering services for a decade's worth of employee data. All employee datasets from that period were provided in six CSV files. The first step of this project was to create an Entity Relation Diagram and create a database in an RDBMS with all the tables for structuring and holding the data as per the relations between the tables. So, I imported the CSVs into a MySQL database, transferred to HDFS/Hive in an optimized format, and analyzed with Hive, Impala, Spark, and SparkML. Finally, I created a Bash Script to facilitate the end-to-end data pipeline and machine learning pipeline for automation purposes.
 
 ## 🔢 Process
 

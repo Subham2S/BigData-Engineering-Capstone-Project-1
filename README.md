@@ -8,7 +8,7 @@
 
 ## 📜 Summary
 
-Objective is to work on data engineering project for one of the big corporation's employee's data from the 1980s and 1995s. All the database of employees from that period are provided six CSV files. In this project, I have designed data model with all the tables to hold data, imported the CSVs into a SQL database, transferred SQL database to HDFS/Hive, and performed analysis using Hive/Impala/Spark/SparkML using the data and created data and ML pipelines.
+One of the big corporations needed data engineering services for a decade's worth of employee data. All employee datasets from that period were provided in six CSV files. The first step of this project was to create an Entity Relation Diagram and create a database in an RDBMS with all the tables to structure and hold the data. The CSVs were imported into a MySQL database, transferred to HDFS/Hive, and analyzed with Hive, Impala, Spark, and SparkML. Finally, I created a Bash Script to facilitate the end-to-end data pipeline and machine learning pipeline for automation purposes.
 
 ## 🔢 Process
 
